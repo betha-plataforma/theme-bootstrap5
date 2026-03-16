@@ -1,6 +1,6 @@
 {
   "name": "@betha-plataforma/theme-bootstrap5",
-  "version": "1.2.2",
+  "version": "1.0.0",
   "description": "Tema do Design System Betha para Bootstrap 5",
   "main": "dist/theme-bootstrap5.css",
   "unpkg": "dist/theme-bootstrap5.min.css",
