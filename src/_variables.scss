@@ -1,0 +1,228 @@
+@use "sass:color";
+@use "sass:map";
+// Variáveis
+// As variáveis devem seguir o seguinte padrão `$componente-estado-propriedade-tamanho`.
+// Ex.: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+$base-font: "Open Sans", "Arial", sans-serif;
+$base-icon: "Material Design Icons", "Arial", sans-serif;
+$assets-url: "https://cdn.betha.cloud/plataforma/design/kare/framework/0.1.4/assets/";
+$icon: (
+   "primary": (
+      "name": "Material Design Icons",
+   ),
+   "secondary": (
+      "name": "Material Design Icons",
+   ),
+);
+$font: (
+   "primary": (
+      "name": "Open Sans",
+      "weight": (
+         "light": 300,
+         "regular": 400,
+         "semi-bold": 600,
+         "bold": 700,
+         "extra-bold": 800,
+      ),
+   ),
+);
+// Colors
+$white: #fff;
+$black: #000;
+
+// Colors >> Gray
+$gray: #bfbfc0;
+$colors-gray: (
+   "dark-40": $black,
+   "dark-30": color.adjust($gray, $lightness: -61%, $space: hsl),
+   "dark-20": color.adjust($gray, $lightness: -40%, $space: hsl),
+   "dark-10": color.adjust($gray, $lightness: -29%, $space: hsl),
+   "dark-5": color.adjust($gray, $lightness: -15%, $space: hsl),
+   "base": $gray,
+   "light-5": color.adjust($gray, $lightness: 9%, $space: hsl),
+   "light-10": color.adjust($gray, $lightness: 14%, $space: hsl),
+   "light-20": color.adjust($gray, $lightness: 18%, $space: hsl),
+   "light-30": color.adjust($gray, $lightness: 21%, $space: hsl),
+   "light-40": $white,
+);
+// Colors >> Red
+$red: #dd413c;
+$colors-red: (
+   "dark-40": color.adjust($red, $lightness: -40%, $space: hsl),
+   "dark-30": color.adjust($red, $lightness: -30%, $space: hsl),
+   "dark-20": color.adjust($red, $lightness: -20%, $space: hsl),
+   "dark-10": color.adjust($red, $lightness: -10%, $space: hsl),
+   "base": $red,
+   "light-10": color.adjust($red, $lightness: 10%, $space: hsl),
+   "light-20": color.adjust($red, $lightness: 20%, $space: hsl),
+   "light-30": color.adjust($red, $lightness: 30%, $space: hsl),
+   "light-40": color.adjust($red, $lightness: 40%, $space: hsl),
+);
+// Colors >> Pink
+$pink: #cb528f;
+$colors-pink: (
+   "dark-40": color.adjust($pink, $lightness: -40%, $space: hsl),
+   "dark-30": color.adjust($pink, $lightness: -30%, $space: hsl),
+   "dark-20": color.adjust($pink, $lightness: -20%, $space: hsl),
+   "dark-10": color.adjust($pink, $lightness: -10%, $space: hsl),
+   "base": $pink,
+   "light-10": color.adjust($pink, $lightness: 10%, $space: hsl),
+   "light-20": color.adjust($pink, $lightness: 20%, $space: hsl),
+   "light-30": color.adjust($pink, $lightness: 30%, $space: hsl),
+   "light-40": color.adjust($pink, $lightness: 40%, $space: hsl),
+);
+// Colors >> Blue
+$blue: #3374db;
+$colors-blue: (
+   "dark-40": color.adjust($blue, $lightness: -40%, $space: hsl),
+   "dark-30": color.adjust($blue, $lightness: -30%, $space: hsl),
+   "dark-20": color.adjust($blue, $lightness: -20%, $space: hsl),
+   "dark-10": color.adjust($blue, $lightness: -10%, $space: hsl),
+   "base": $blue,
+   "light-10": color.adjust($blue, $lightness: 10%, $space: hsl),
+   "light-20": color.adjust($blue, $lightness: 20%, $space: hsl),
+   "light-30": color.adjust($blue, $lightness: 30%, $space: hsl),
+   "light-40": color.adjust($blue, $lightness: 40%, $space: hsl),
+);
+// Colors >> Aqua
+$aqua: #46afd2;
+$colors-aqua: (
+   "dark-40": color.adjust($aqua, $lightness: -40%, $space: hsl),
+   "dark-30": color.adjust($aqua, $lightness: -30%, $space: hsl),
+   "dark-20": color.adjust($aqua, $lightness: -20%, $space: hsl),
+   "dark-10": color.adjust($aqua, $lightness: -10%, $space: hsl),
+   "base": $aqua,
+   "light-10": color.adjust($aqua, $lightness: 10%, $space: hsl),
+   "light-20": color.adjust($aqua, $lightness: 20%, $space: hsl),
+   "light-30": color.adjust($aqua, $lightness: 30%, $space: hsl),
+   "light-40": color.adjust($aqua, $lightness: 40%, $space: hsl),
+);
+// Colors >> Green
+$green: #3ec18f;
+$colors-green: (
+   "dark-40": color.adjust($green, $lightness: -40%, $space: hsl),
+   "dark-30": color.adjust($green, $lightness: -30%, $space: hsl),
+   "dark-20": color.adjust($green, $lightness: -20%, $space: hsl),
+   "dark-10": color.adjust($green, $lightness: -10%, $space: hsl),
+   "base": $green,
+   "light-10": color.adjust($green, $lightness: 10%, $space: hsl),
+   "light-20": color.adjust($green, $lightness: 20%, $space: hsl),
+   "light-30": color.adjust($green, $lightness: 30%, $space: hsl),
+   "light-40": color.adjust($green, $lightness: 40%, $space: hsl),
+);
+// Colors >> Yellow
+$yellow: #e8b730;
+$colors-yellow: (
+   "dark-40": color.adjust($yellow, $lightness: -40%, $space: hsl),
+   "dark-30": color.adjust($yellow, $lightness: -30%, $space: hsl),
+   "dark-20": color.adjust($yellow, $lightness: -20%, $space: hsl),
+   "dark-10": color.adjust($yellow, $lightness: -10%, $space: hsl),
+   "base": $yellow,
+   "light-10": color.adjust($yellow, $lightness: 10%, $space: hsl),
+   "light-20": color.adjust($yellow, $lightness: 20%, $space: hsl),
+   "light-30": color.adjust($yellow, $lightness: 30%, $space: hsl),
+   "light-40": color.adjust($yellow, $lightness: 40%, $space: hsl),
+);
+// Colors >> Orange
+$orange: #e87d30;
+$colors-orange: (
+   "dark-40": color.adjust($orange, $lightness: -40%, $space: hsl),
+   "dark-30": color.adjust($orange, $lightness: -30%, $space: hsl),
+   "dark-20": color.adjust($orange, $lightness: -20%, $space: hsl),
+   "dark-10": color.adjust($orange, $lightness: -10%, $space: hsl),
+   "base": $orange,
+   "light-10": color.adjust($orange, $lightness: 10%, $space: hsl),
+   "light-20": color.adjust($orange, $lightness: 20%, $space: hsl),
+   "light-30": color.adjust($orange, $lightness: 30%, $space: hsl),
+   "light-40": color.adjust($orange, $lightness: 40%, $space: hsl),
+);
+// Colors >> Purple
+$purple: #9f62b2;
+$colors-purple: (
+   "dark-40": color.adjust($purple, $lightness: -40%, $space: hsl),
+   "dark-30": color.adjust($purple, $lightness: -30%, $space: hsl),
+   "dark-20": color.adjust($purple, $lightness: -20%, $space: hsl),
+   "dark-10": color.adjust($purple, $lightness: -10%, $space: hsl),
+   "base": $purple,
+   "light-10": color.adjust($purple, $lightness: 10%, $space: hsl),
+   "light-20": color.adjust($purple, $lightness: 20%, $space: hsl),
+   "light-30": color.adjust($purple, $lightness: 30%, $space: hsl),
+   "light-40": color.adjust($purple, $lightness: 40%, $space: hsl),
+);
+// Colors >> Todas
+$colors: (
+   "gray": $colors-gray,
+   "red": $colors-red,
+   "pink": $colors-pink,
+   "blue": $colors-blue,
+   "aqua": $colors-aqua,
+   "green": $colors-green,
+   "yellow": $colors-yellow,
+   "orange": $colors-orange,
+   "purple": $colors-purple,
+   "white": (
+      "base": $white,
+   ),
+   "black": (
+      "base": $black,
+   ),
+);
+
+$main-brand-color: #0761ff;
+
+$brand-colors: (
+   'brown'    : #9a8b7d, // Gestão municipal
+   'lilac'    : #a6b8ff, // Contábil
+   'lime'     : #00bb77, // Arrecadação
+   'gray'     : #959798, // Atendimento
+   'red'      : #ff7a75, // Contratos
+   'blue'     : #009adc, // Pessoal
+   'navy'     : #263e81, // NoPaper
+   'green'    : #a7c27e, // Saúde
+   'yellow'   : #f3b02e, // Educação
+   'orange'   : #f4812e, // Leis
+);
+
+/**
+ ** Colors adicionais utilizadas no sistema
+ **/
+
+$additional-colors: (
+   "blue": #009adc,
+   "petrol": #1c1a23,
+   "gold": #ad8b43,
+);
+$breadcrumb-text: map.get($colors-gray, "dark-10");
+$link-color: map.get($colors-blue, "base");
+$a-link: map.get($colors-blue, "dark-10");
+$link: $link-color;
+$switch-color: map.get($colors-gray, "dark-30");
+$switch-handle-color: map.get($colors-gray, "dark-10");
+$radio-button: map.get($colors-gray, "base");
+$shortcut: map.get($colors-gray, "base");
+$tag-background: map.get($colors-gray, "light-20");
+$tag-color: map.get($colors-gray, "dark-20");
+$badge-background: map.get($colors-gray, "light-20");
+// Timeline
+$dashed-line: map.get($colors-gray, "light-10");
+$dot-and-icons: map.get($colors-gray, "dark-20");
+$dot-active: map.get($colors-aqua, "base");
+$dot-desabled: map.get($colors-gray, "base");
+$text-timeline: map.get($colors-gray, "dark-30");
+$icon-danger-timeline: map.get($colors-red, "base");
+$icon-warning-timeline: map.get($colors-yellow, "base");
+
+$sizes: (
+  "xs": 2px,
+  "sm": 4px,
+  "base": 6px,
+  "lg": 8px,
+  "xl": 10px,
+  "xxl": 14px
+);
+
+$border-radius: map.get($sizes, "base");
+$border-radius-sm: map.get($sizes, "sm");
+$border-radius-lg: map.get($sizes, "lg");
+
+// stylelint-enable

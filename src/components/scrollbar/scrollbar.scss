@@ -1,0 +1,21 @@
+@use "sass:color";
+@use "../../config" as *;
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 8px;
+  width: 8px;
+  &-track {
+    background: palette('gray', 'light-30');
+  }
+  &-corner {
+    background: palette('gray', 'light-30');
+  }
+  &-thumb {
+    background-color: palette('gray');
+    border-radius: 1px;
+    &:hover {
+      background-color: color.change(palette('black'), $alpha: .3);
+    }
+  }
+}

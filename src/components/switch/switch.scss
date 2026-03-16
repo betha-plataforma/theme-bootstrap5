@@ -1,0 +1,100 @@
+@use "sass:map";
+@use "../../config" as *;
+
+$switch-width: 1.75rem;
+$switch-height: 0.625rem;
+$switch-offset: 2.25rem;
+$switch-thumb-size: 1rem;
+$switch-thumb-travel: $switch-width - $switch-thumb-size;
+
+$switch-track-border: map.get($colors-gray, "base");
+$switch-track: map.get($colors-gray, "base");
+$switch-track-checked: map.get($colors-blue, "light-20");
+$switch-track-disabled: map.get($colors-gray, "light-30");
+$switch-knob: map.get($colors-gray, "light-20");
+$switch-knob-border: map.get($colors-gray, "base");
+$switch-knob-checked: $blue;
+$switch-knob-disabled: map.get($colors-gray, "light-10");
+
+.form-switch {
+  padding-left: $switch-offset;
+
+  .form-check-input {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: $switch-track;
+    background-image: none;
+    border: 1px solid $switch-track-border;
+    border-radius: 999px;
+    box-shadow: none;
+    cursor: pointer;
+    height: $switch-height;
+    margin-left: -$switch-offset;
+    margin-top: 0.35rem;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
+    width: $switch-width;
+
+    &::before {
+      background-color: $switch-knob;
+      border-radius: 50%;
+      border: 1px solid $switch-knob-border;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      content: "";
+      height: $switch-thumb-size;
+      left: -2px;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      transition: transform .15s ease-in-out, background-color .15s ease-in-out;
+      width: $switch-thumb-size;
+    }
+
+    &::after {
+      content: none;
+      display: none;
+    }
+
+    &:focus {
+      background-color: $switch-track;
+      border-color: $switch-track-border;
+      box-shadow: none;
+    }
+
+    &:checked {
+      background-color: $switch-track-checked;
+      border-color: $switch-track-checked;
+
+      &::before {
+        background-color: $switch-knob-checked;
+        border-color: $switch-knob-checked;
+        transform: translate($switch-thumb-travel, -50%);
+      }
+    }
+
+    &:disabled,
+    &[disabled] {
+      background-color: $switch-track-disabled;
+      border-color: $switch-track-disabled;
+      cursor: not-allowed;
+
+      &::before {
+        background-color: $switch-knob-disabled;
+      }
+    }
+
+    &:disabled ~ .form-check-label,
+    &[disabled] ~ .form-check-label {
+      color: map.get($colors-gray, "light-10");
+      cursor: not-allowed !important;
+    }
+  }
+
+  .form-check-label {
+    color: map.get($colors-gray, "dark-30");
+    cursor: pointer;
+    font-weight: normal !important;
+  }
+}

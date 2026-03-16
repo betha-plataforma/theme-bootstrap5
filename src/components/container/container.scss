@@ -1,0 +1,19 @@
+// Global
+@use "../../config" as *;
+
+$root: '.container';
+
+.container {
+  &#{$root}-page {
+    background: palette('white');
+    border-radius: $border-radius-sm;
+    box-sizing: border-box;
+    min-height: 500px;
+    position: relative;
+  }
+
+  &#{$root}--full-y {
+    height: calc(100vh - 103px);
+    padding: 0;
+  }
+}

@@ -1,0 +1,15 @@
+@use "../../config" as *;
+.popover {
+  --bs-popover-border-color: #{palette('gray', 'light-10')};
+  --bs-popover-border-radius: 0;
+  --bs-popover-box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+  --bs-popover-body-padding-x: 12px;
+  --bs-popover-body-padding-y: 12px;
+  font-family: $base-font;
+  padding: 0;
+
+  .popover-body,
+  &-content {
+    padding: 12px;
+  }
+}

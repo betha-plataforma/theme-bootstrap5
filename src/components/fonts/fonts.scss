@@ -1,0 +1,30 @@
+$font-name: 'Open Sans' !default;
+$font-path: './fonts/' !default;
+
+@font-face {
+  font-family: $font-name;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url('#{$font-path}OpenSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-name;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url('#{$font-path}OpenSans-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-name;
+  src: local('Open Sans Semibold'), local('Open Sans SemiBold'), local('OpenSans-Semibold'), local('OpenSans-SemiBold'), url('#{$font-path}OpenSans-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-name;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('#{$font-path}OpenSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}

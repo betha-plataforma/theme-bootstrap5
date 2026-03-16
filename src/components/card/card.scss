@@ -1,0 +1,32 @@
+// Global
+@use "../../config" as *;
+
+.card {
+
+  border-radius: $border-radius-lg;
+
+  .card-img, 
+  .card-img-top {
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+  }
+
+  .card-img, 
+  .card-img-bottom {
+    border-bottom-right-radius: $border-radius-lg;
+    border-bottom-left-radius: $border-radius-lg;
+  }
+
+  .card-img-overlay {
+    border-radius: $border-radius-lg;
+  }
+
+  &.bg-secondary {
+    background-color: palette('gray', 'light-30') !important;
+  }
+
+  &.border-secondary {
+    border: 1px solid palette('gray') !important;
+  }
+
+}

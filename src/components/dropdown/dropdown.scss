@@ -1,0 +1,106 @@
+// Global
+@use "sass:map";
+@use "../../config" as *;
+$dropdown-header-color: map.get($colors-gray, "dark-10");
+$dropdown-color: map.get($colors-gray, "dark-20");
+
+.dropdown-menu {
+  border-color: palette("gray", "light-10");
+  border-radius: $border-radius-sm;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  .dropdown-header {
+    color: palette("gray", "dark-20");
+    font-weight: font("primary", "weight", "semi-bold");
+  }
+  .divider,
+  .dropdown-divider {
+    background-color: palette("gray", "light-10");
+  }
+  li {
+    > a {
+      color: $dropdown-color;
+      padding: 6px 14px;
+      i {
+        color: #555;
+      }
+    }
+    > a {
+      &:hover,
+      &:focus {
+        background-color: palette("gray", "light-30");
+      }
+    }
+  }
+  > li {
+    &.disabled {
+      > a {
+        color: palette("gray") !important;
+      }
+    }
+  }
+
+  ul.radio-list {
+    li {
+      &:hover {
+        background-color: #ededed;
+      }
+    }
+  }
+}
+
+.dropdown-sm {
+  width: 350px;
+}
+
+.dropdown-lg {
+  width: 650px;
+}
+
+.dropdown-menu > .disabled > a,
+.dropdown-item.disabled {
+  color: palette("gray");
+}
+
+// Mantém o caret escondido nos dropdowns do tema
+.dropdown-toggle,
+.dropup .dropdown-toggle {
+  &::after {
+    display: none;
+  }
+}
+
+.dropdown-item {
+  color: palette("gray", "dark-30");
+  &:focus,
+  &:hover {
+    background-color: palette("gray", "light-30");
+    border-color: palette("gray", "light-30");
+    outline: none;
+    color: palette("gray", "dark-30");
+  }
+  &.active,
+  &:active {
+    color: #222;
+    background-color: #c0c0c0;
+  }
+}
+
+.btn.btn-secondary.dropdown-toggle,
+.show > .btn-secondary.dropdown-toggle {
+  background-color: palette("gray", "light-40");
+  border-color: palette("gray", "base");
+  color: palette("gray", "dark-30");
+
+  &:focus {
+    background-color: palette("gray", "light-20");
+  }
+
+  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled):not(.disabled):active,
+  &:active,
+  &.active {
+    background-color: palette("gray", "light-10");
+    border-color: palette("gray", "base");
+    color: palette("gray", "dark-30");
+  }
+}

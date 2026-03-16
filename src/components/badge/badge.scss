@@ -1,0 +1,87 @@
+// Global
+@use "sass:map";
+@use "../../config" as *;
+
+$badge-default: (
+  'background': map.get($colors-gray, 'light-20'),
+  'color': map.get($colors-gray, 'dark-20')
+);
+
+$badge-primary: (
+  'background': map.get($colors-blue, 'light-20'),
+  'color': map.get($colors-gray, 'light-40')
+);
+
+$badge-success: (
+  'background': map.get($colors-green, 'dark-10'),
+  'color': map.get($colors-gray, 'light-40')
+);
+
+$badge-danger: (
+  'background': map.get($colors-red, 'base'),
+  'color': map.get($colors-gray, 'light-40')
+);
+
+$badge-warning: (
+  'background': map.get($colors-yellow, 'base'),
+  'color': map.get($colors-gray, 'dark-30')
+);
+
+$badge-info: (
+  'background': map.get($colors-aqua, 'light-10'),
+  'color': map.get($colors-gray, 'dark-30')
+);
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background-color:  palette('gray', 'light-10');
+  border-radius: 50px;
+  color: palette('gray', 'dark-30');
+  font-size: 90%;
+  font-weight: 400;
+  padding: 3px 6px;
+  text-align: center;
+
+  &.badge-secondary,
+  &.bg-secondary,
+  &.text-bg-secondary {
+    background-color: palette('gray', 'light-20');
+    color: palette('gray', 'dark-20');
+  }
+
+  &.badge-primary,
+  &.bg-primary,
+  &.text-bg-primary {
+    background-color: palette('blue');
+    color: palette('white');
+  }
+
+  &.badge-success,
+  &.bg-success,
+  &.text-bg-success {
+    background-color: palette('green', 'dark-10');
+    color: palette('white');
+  }
+
+  &.badge-danger,
+  &.bg-danger,
+  &.text-bg-danger {
+    background-color: palette('red');
+    color: palette('white');
+  }
+
+  &.badge-warning,
+  &.bg-warning,
+  &.text-bg-warning {
+    background-color: palette('yellow');
+    color: palette('gray', 'dark-30');
+  }
+
+  &.badge-info,
+  &.bg-info,
+  &.text-bg-info {
+    background-color: palette('aqua', 'light-10');
+    color: palette('gray', 'dark-30');
+  }
+}
