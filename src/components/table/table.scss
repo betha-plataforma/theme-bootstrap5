@@ -45,6 +45,7 @@ $root: ".table";
 
     > tr > th {
       border: none;
+      border-bottom: 1px solid #e1e3e6;;
       font-size: 80%;
       font-weight: 600;
 
@@ -63,6 +64,7 @@ $root: ".table";
       > div > a,
       > label,
       > span {
+        text-decoration: none;
         text-transform: uppercase;
       }
     }

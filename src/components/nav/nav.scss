@@ -17,7 +17,7 @@ nav.nav {
     border-bottom: 2px solid palette("gray", "light-10");
     margin-bottom: 15px;
     .nav-item {
-      margin-bottom: -2px;
+      margin-bottom: -1px;
     }
     .nav-link {
       border: none;
@@ -146,7 +146,7 @@ nav.nav {
       position: absolute;
     }
     .nav-item {
-      margin-bottom: -2px;
+      margin-bottom: -1px;
     }
     .nav-link {
       border-left: none;
@@ -155,6 +155,8 @@ nav.nav {
       font-weight: 400;
       &:hover {
         border-bottom: 2px solid palette("gray", "light-10");
+        text-decoration: none;
+        border-color: #3374db;
       }
       &.active {
         font-weight: font("primary", "weight", "semi-bold");
@@ -222,6 +224,7 @@ nav.nav {
       border-left-width: 2px;
       color: palette("gray", "dark-10");
       border-radius: 0;
+      text-decoration: none;
       text-transform: uppercase;
       font-weight: font("primary", "weight", "regular");
       padding: 12px;

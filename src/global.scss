@@ -43,7 +43,7 @@ a:not([href]):not([class]) {
         }
     }
     &:focus {
-        text-decoration: underline;
+        text-decoration: none;
     }
     &:hover {
         color: palette("blue", "dark-10");
