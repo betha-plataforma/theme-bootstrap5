@@ -31,4 +31,4 @@ jobs:
         run: yarn build
       
       - name: Publish
-        run: yarn publish --access public --non-interactive
+        run: npm publish --access public
