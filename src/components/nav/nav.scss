@@ -156,7 +156,7 @@ nav.nav {
       &:hover {
         border-bottom: 2px solid palette("gray", "light-10");
         text-decoration: none;
-        border-color: #3374db;
+        border-color: palette("blue");
       }
       &.active {
         font-weight: font("primary", "weight", "semi-bold");
